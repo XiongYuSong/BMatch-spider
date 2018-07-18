@@ -28,7 +28,7 @@ if(system.args.length !==2){
                 }
                 var body = page.content;
                 //写入文件
-                fs.write('demo.html',body,'w');
+                fs.write('/demo.html',body,'w');
                 response.write(body);
                 response.close();
             });

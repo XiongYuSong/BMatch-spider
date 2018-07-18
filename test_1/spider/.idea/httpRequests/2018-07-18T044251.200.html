@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="cNhJHKEzsD">
+    <meta property="qc:admins" content="27354635321361636375">
+    <link rel="canonical" href="https://music.163.com/">
+    <meta name="applicable-device" content="pc,mobile">
+    <title>Hello - OMFG - åæ² - ç½æäºé³ä¹</title>
+    <meta name="keywords"
+          content="ç½æäºé³ä¹ï¼é³ä¹ï¼æ­æ¾å¨ï¼ç½æï¼ä¸è½½ï¼æ­æ¾ï¼DJï¼åè´¹ï¼ææï¼ç²¾éï¼æ­åï¼è¯å«é³ä¹ï¼æ¶èï¼åäº«é³ä¹ï¼é³ä¹äºå¨ï¼é«é³è´¨ï¼320Kï¼é³ä¹ç¤¾äº¤ï¼å®ç½ï¼music.163.com">
+    <meta name="description"
+          content="ç½æäºé³ä¹æ¯ä¸æ¬¾ä¸æ³¨äºåç°ä¸åäº«çé³ä¹äº§åï¼ä¾æä¸ä¸é³ä¹äººãDJãå¥½åæ¨èåç¤¾äº¤åè½ï¼ä¸ºç¨æ·æé å¨æ°çé³ä¹çæ´»ã">
+    <meta property="og:title" content="ç½æäºé³ä¹">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://p3.music.126.net/tBTNafgjNnTL1KlZMt7lVA==/18885211718935735.jpg">
+    <meta property="og:url" content="https://music.163.com/">
+    <script type="text/javascript" async="" src="//wr.da.netease.com/ga.js"></script>
+    <script type="text/javascript">
+        var GDownloadLink = "";
+        var GDevice = "phone";
+        var GFrom = "";
+        var GClient = "";
+        var GPlatform = "other";
+        var GRef = '';
+        var GInApp = false;
+        var GMobile = false;
+        var GAbroad = false;
+        var GUser = {};
+        var GAllowRejectComment = false;
+        var GEnc = true;
+        var GEnvType = "online";
+        var GWebpSupport = "1";
+        window.NEJ_CONF = {p_csrf: {cookie: '__csrf', param: 'csrf_token'}};
+        GUtil = {
+            getBase: function () {
+                return location.protocol + '//' + location.hostname;
+            },
+            getPathAndHash: function (_url) {//è·åURL path ä¹åçææåå®¹,å¹¶å°/#/æ¿æ¢æ/m/ä½¿ä¹æä¸ºpathçä¸é¨å
+                if (!_url) return '';
+                var _reg0 = /^https?:\/\/.*?\//i,
+                    _reg1 = /\/?#\/?/i;
+                return _url.replace(_reg0, '/').replace(_reg1, '/m/');
+            },
+            composeRefer: function (_url, _ref) {//å¯¹ææçé¡µé¢è¯·æ±é½å ä¸refåæ°è¡¨ç¤ºè¢«åµå¥çæ¥æº
+                if (!_ref) return _url;
+                var _hi = _url.indexOf('#'),
+                    _si = _url.indexOf('?');
+                if (_si > 0 && (_si < _hi || _hi < 0)) {
+                    return _url.substring(0, _si + 1) + 'ref=' + _ref + '&' + _url.substring(_si + 1);
+                } else if (_hi > 0 && (_si < 0 || _si > _hi)) {
+                    return _url.substring(0, _hi) + '?ref=' + _ref + _url.substring(_hi);
+                } else {
+                    return _url + '?ref=' + _ref;
+                }
+            }
+        };
+        (function () {
+            var _ua = window.navigator.userAgent,
+                _isMobile = /(mobile|mobi|wap|iphone)/i.test(_ua),
+                _isAndroid = /android/i.test(_ua),
+                _isIpad = /(ipad)/i.test(_ua),
+                _igList = [/^\/xiami$/, /^\/live$/],//ä¸éè¦ä»¥åé¡µé¢æå¼çåè¡¨ï¼æ¯å¦æäºæ´»å¨é¡µé¢
+                _pn = location.pathname,
+                _idx = _pn.lastIndexOf('/'),
+                _pReg = /\s*(\w+)\s*=\s*(\d+)\s*/,
+                _redirect2mobile = function () {
+                    var _type, _murl,
+                        _id = 0,
+                        _hash = location.hash,
+                        _mReg = /^#\/?m?\/(share|song|playlist|djradio|dj|program|album|mv|artist|topic|radio|zysf|drqp|qp|activity|store|user|event|video|discover\/toplist)(\/(\d+))?/,
+                        _base = location.protocol + '//' + location.hostname,
+                        _sindex = _hash.lastIndexOf('?'),
+                        _search = _sindex > -1 ? _hash.substring(_sindex + 1) : '',
+                        _match = _mReg.exec(_hash);
+// æ hash || ä¸å¹é || å¹éä½æ¯ååä¹å¤ä¸å¸¦åæ° || å¹éä¸æ¯æè¡æ¦
+                    if (!_hash.length || !_match || (_match[1] != 'store' && !_search) || /share|discover\/toplist/.test(_match[1])) {
+// æhash && (æ²¡æåæ° || æè¡æ¦)
+                        if ((!_search || /share|discover\/toplist/.test(_match[1])) && _hash.length) {
+                            location.href = _base + '/' + _hash.replace('#', 'm');
+                        } else {
+                            location.href = _base + '/m/';
+                        }
+                        return;
+                    }
+                    _type = _match[1];
+                    _id = _match[3];
+                    if (_type == 'dj') _type = 'program';
+                    if (_type == 'store') {
+                        _murl = /^#\/store\/(product|concert)\/detail/.test(_hash) ? _hash.replace('#/store', '/store/m') : '/store/m/product/index';
+                    } else {
+                        _murl = '/' + _type + '?' + (_id ? 'id=' + _id + '&' : '') + _search;
+                    }
+                    location.href = _base + _murl;
+                };
+            if (_isMobile || _isAndroid || _isIpad) {
+                _redirect2mobile();
+                return;
+            }
+            if (!_pn || _pn == '/') return;
+            for (var i in _igList) {
+                if (_igList[i].test(_pn)) return;
+            }
+            if (top == self) {
+                location.href = '/#' + GUtil.getPathAndHash(location.href);
+                return;
+            }
+//æç´¢å¼æè¿æ¥çåå®¹é¡µè¿æ¥
+            if (top == self && /^\/static\/(song|playlist|album|artist)/i.test(_pn)) {
+                location.href = '/#' + _pn.substring(0, _idx).replace('/static/', '/') + '?id=' + _pn.substring(_idx + 1);
+            }
+        })();
+        (function () {
+            var _addEvent = function (_node, _type, _cb) {
+                    if (_node.addEventListener) {
+                        _node.addEventListener(_type, _cb);
+                    } else if (_node.attachEvent) {
+                        _node.attachEvent('on' + _type, _cb);
+                    }
+                },
+                _onAnchorClick = function (_event) {//æªè·ææ<a>æ ç­¾çç¹å»äºä»¶ï¼èªå®ä¹é¡µé¢çè·³è½¬
+                    _event = _event || window.event;
+                    var _el = _event.target || _event.srcElement,
+                        _base = location.protocol + '//' + location.host;
+                    while (_el && _el != document) {
+                        if (_el.tagName && _el.tagName.toLowerCase() == 'a') {
+//fix ie6ä¸ææ¶javascript:;ä¸è½é»æ­¢é»è®¤äºä»¶çbug.
+                            if (_el.href.indexOf('javascript:') >= 0) {
+                                !!_event.preventDefault
+                                    ? _event.preventDefault()
+                                    : _event.returnValue = !1;
+                                return;
+                            }
+                            if (_event.button == 2) return;//ff å³é®ä¼è§¦åclickäºä»¶
+//ååæç¬ç«å°é¡¶æ äºï¼æé¤æãä½ä¼åãæ°å­ä¸è¾ãåæ²çååãè®¢åé¡µä»ä¿æä¸»ç«frameï¼
+//è¿äºurlå¾å¾æ¯éè¿/vip2, /payfeeè¿æ ·çå°åè·³è½¬çï¼ä¹æ²¡æé®é¢ï¼å¦æççæï¼URLç¨#éç½®å°±å¥½äº
+                            var _path = _el.href.replace(/^https?:\/\/.*?\//i, '/').split(/[?#]/)[0];
+                            if (_path.indexOf('/store/') == 0) return;
+                            if (_path.indexOf('/m/at/') == 0) return;
+                            if (_path.indexOf('/prime/m/') == 0) return; // ä¼åç§»å¨ç«¯é¡µé¢
+                            if (_path.indexOf('/oauth2/') == 0) return; // ææé¡µé¢
+                            if (_path.indexOf('/m/oauth2/') == 0) return; // ææé¡µé¢
+                            if (_path.indexOf('/octave/m/') == 0) return; // æ°å­ä¸è¾ç§»å¨ç«¯è´­ä¹°
+                            if (_path.indexOf('/v/m/album') == 0) return; // æ°å­ä¸è¾èµ éç¸å³
+//æ°çªå£æå¼çé¾æ¥ãäºé³ä¹åé¡µé¢å½¢å¼çé¾æ¥ãç«å¤çé¾æ¥ä¸åæ¦æªå¤çã
+                            if (_el.target == '_blank'
+                                || _el.target == 'blank'
+                                || _isNotSameHost(_el.href)
+                                || _el.href == _base
+                                || _el.href.indexOf(_base + '/#') >= 0) return;
+                            !!_event.preventDefault
+                                ? _event.preventDefault()
+                                : _event.returnValue = !1;
+                            location.dispatch2(_el.href);
+                            break;
+                        } else {
+                            _el = _el.parentNode;
+                        }
+                    }
+                },
+                _isNotSameHost = function (_href) {
+                    var _same = true;
+                    if (_href.charAt(0) != '/') {
+                        var _index = _href.indexOf('//' + location.hostname);
+                        if (_index > 0) {
+                            var _index2 = _href.indexOf('?');
+                            if (_index2 > 0 && _index2 < _index) {
+                                _same = false;
+                            }
+                        } else {
+                            _same = false;
+                        }
+                    }
+                    return !_same;
+                };
+            _addEvent(document, 'click', _onAnchorClick);
+//æ©å±ä¸ä¸ªjsä¸­ç´æ¥ä½¿ç¨çé¡µé¢è·³è½¬çæ¹æ³ï¼ä»¥æ¦æªjsä¸­çé¡µé¢è·³è½¬è¡ä¸º
+            location.dispatch2 = function (_url, _replace) {
+                var delegate = false;
+                try {
+                    delegate = !!top.GDispatcher;
+                } catch (e) {
+                    delegate = false;
+                }
+                if (delegate) {
+                    top.GDispatcher.dispatch(_url, _replace);
+                } else {
+                    _url = GUtil.composeRefer(_url, GRef);
+//é®ç®±é³ä¹çä¸­ï¼æ¯æ¬¡é¾æ¥çè·³è½¬é½è¦å°proxy.htmlçå°ååå¹¶å°hashä¸­
+                    if (GRef && GRef == 'mail') {
+                        var _hindex, _sindex,
+                            _reg = /(https?:\/\/.+\/proxy.html)/,
+                            _hreg = /#(.*?)$/,
+                            _href = decodeURIComponent(location.href);
+                        if (!_reg.test(decodeURIComponent(_url)) && _reg.test(_href)) {
+                            _hindex = _url.indexOf('#');
+                            _sindex = _url.lastIndexOf('?');
+                            if (_hindex > 0) {
+                                _url = _url + (_sindex > _hindex ? '&' : '?') + 'proxy=' + encodeURIComponent(RegExp.$1);
+                            } else {
+                                _url = _url + '#proxy=' + encodeURIComponent(RegExp.$1);
+                            }
+                        }
+                    }
+                    if (_replace) {
+                        location.replace(_url);
+                    } else {
+                        location.href = _url;
+                    }
+                }
+            };
+        })();</script>
+    <link rel="shortcut icon" href="//s1.music.126.net/style/favicon.ico?v20180307">
+    <link href="//s2.music.126.net/web/s/core.css?4795e0b1839ea5fb9951aa51c9acb6bc" type="text/css" rel="stylesheet">
+    <link href="//s2.music.126.net/web/s/pt_frame.css?57f1db27b624f8bbd155a1fa3eacf6a1" type="text/css"
+          rel="stylesheet">
+    <style>html, body {
+        overflow: hidden;
+    }</style>
+    <script>if (top != self) top.location = self.location;</script>
+    <script type="text/javascript" charset="UTF-8" async=""
+            src="https://acstatic-dun.126.net/2.3.1_ce5a6dcf/watchman.min.js"></script>
+</head>
+<body>
+<div style="position:absolute;top:0;left:0;width:1px;height:1px;z-index:10000;overflow:hidden;">
+    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+            codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" width="1px" height="1px"
+            id="flash_1531903371259">
+        <param value="/style/swf/music/music.swf?v=20151204" name="movie">
+        <param value="always" name="allowscriptaccess">
+        <param value="id=flash_1531903371259" name="flashvars">
+        <embed src="/style/swf/music/music.swf?v=20151204" name="flash_1531903371259" width="1px" height="1px"
+               pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash"
+               allowscriptaccess="always" flashvars="id=flash_1531903371259">
+    </object>
+</div>
+<div id="g-topbar" class="g-topbar" style="width: 379px; top: 0px;">
+    <div class="m-top">
+        <div class="wrap f-cb">
+            <h1 class="logo"><a hidefocus="true" href="/#">ç½æäºé³ä¹</a></h1>
+            <ul class="m-nav j-tflag">
+                <li class="fst">
+                    <span><a hidefocus="true" href="/#" data-module="discover" class="z-slt"><em>åç°é³ä¹</em><sub
+                            class="cor">&nbsp;</sub></a></span>
+                </li>
+                <li>
+                    <span><a data-action="bilog" data-log-action="page"
+                             data-log-json="{&quot;type&quot;:&quot;my&quot;}" hidefocus="true" href="/my/"
+                             data-module="my"><em>æçé³ä¹</em><sub class="cor">&nbsp;</sub></a></span>
+                </li>
+                <li>
+                    <span><a hidefocus="true" href="/friend" data-module="friend"><em>æå</em><sub
+                            class="cor">&nbsp;</sub><i class="dot j-t" style="display: none;"></i></a></span>
+                </li>
+                <li>
+                    <span><a hidefocus="true" href="/store/product" target="_blank" data-module="store"><em>åå</em></a></span>
+                </li>
+                <li>
+                    <span><a hidefocus="true" href="/nmusician/web/recruit" target="_blank" data-module="musician"><em>é³ä¹äºº</em></a></span>
+                </li>
+                <li class="lst">
+                    <span><a id="topbar-download-link" data-action="bilog" data-log-action="page"
+                             data-log-json="{&quot;type&quot;:&quot;downloadapp&quot;,&quot;source&quot;:&quot;tab&quot;}"
+                             hidefocus="true" href="/download" data-module="download"><em>ä¸è½½å®¢æ·ç«¯</em><sub
+                            class="cor">&nbsp;</sub></a></span><sup class="hot">&nbsp;</sup>
+                </li>
+            </ul>
+            <div class="m-tophead f-pr j-tflag" id="auto-id-kzISire4IXmuTWKT"><a hidefocus="true" href="#"
+                                                                                 class="link s-fc3" data-action="login">ç»å½</a>
+                <div class="m-tlist j-uflag" style="display:none;">
+                    <div class="inner">
+                        <ul class="f-cb">
+                            <li class="lb"><a hidefocus="true" class="itm-1" href="#" data-action="login"
+                                              data-type="mobile"><i class="icn icn-mb"></i><em>ææºå·ç»å½</em></a>
+                            </li>
+                            <li class="ltb"><a hidefocus="true" class="itm-2"
+                                               href="https://music.163.com/api/sns/authorize?snsType=10&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"
+                                               target="_blank" data-action="login" data-type="tencent"><i
+                                    class="icn icn-wx"></i><em>å¾®ä¿¡ç»å½</em></a></li>
+                            <li class="lb"><a hidefocus="true" class="itm-2"
+                                              href="https://music.163.com/api/sns/authorize?snsType=5&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"
+                                              target="_blank" data-action="login" data-type="tencent"><i
+                                    class="icn icn-qq"></i><em>QQç»å½</em></a></li>
+                            <li class="ltb"><a hidefocus="true" class="itm-2"
+                                               href="https://music.163.com/api/sns/authorize?snsType=2&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"
+                                               target="_blank" data-action="login" data-type="sina"><i
+                                    class="icn icn-sn"></i><em>æ°æµªå¾®åç»å½</em></a></li>
+                            <li class="lb"><a hidefocus="true" class="itm-2" href="#" data-action="login"
+                                              data-type="netease"><i
+                                    class="icn icn-wy"></i><em>ç½æé®ç®±å¸å·ç»å½</em></a></li>
+                        </ul>
+                    </div>
+                    <i class="arr"></i>
+                </div>
+            </div>
+            <a data-action="bilog" data-log-action="click"
+               data-log-json="{&quot;target&quot;:&quot;uploadvideo&quot;,&quot;page&quot;:&quot;homepage&quot;}"
+               href="/login?targetUrl=%2Fuservideo" target="_blank" class="m-topvd f-pr">è§é¢æç¨¿</a>
+            <div class="m-srch f-pr j-suggest" id="g_search">
+                <div class="srchbg">
+<span class="parent">
+<input type="text" name="srch" id="srch" class="txt j-flag" value="" style="opacity: 1;">
+<label class="ph j-flag" id="auto-id-hRfdMahwnXeJzDwS">é³ä¹/è§é¢/çµå°/ç¨æ·</label>
+</span>
+                </div>
+                <div class="j-showoff u-showoff f-hide"><p>ç°å¨æ¯ææç´¢MVå¦~</p></div>
+                <span class="j-flag" style="display:none;" id="auto-id-aIP2x80mloPTooDK">&nbsp;</span>
+                <div class="u-lstlay j-flag" style="display:none;" id="auto-id-soD1ex2zW3hadQJE"></div>
+            </div>
+        </div>
+    </div>
+    <div class="m-subnav m-subnav-up f-pr j-tflag f-hide"></div>
+    <div id="g_nav2" class="m-subnav j-tflag">
+        <div class="wrap f-pr">
+            <ul class="nav">
+                <li><a hidefocus="true" data-module="discover" href="/discover"><em>æ¨è</em></a></li>
+                <li><a hidefocus="true" data-module="toplist" href="/discover/toplist"><em>æè¡æ¦</em></a></li>
+                <li><a hidefocus="true" data-module="playlist" href="/discover/playlist"><em>æ­å</em></a></li>
+                <li><a hidefocus="true" data-module="djradio" href="/discover/djradio"><em>ä¸»æ­çµå°</em></a></li>
+                <li><a hidefocus="true" data-module="artist" href="/discover/artist"><em>æ­æ</em></a></li>
+                <li><a hidefocus="true" data-module="album" href="/discover/album"><em>æ°ç¢ä¸æ¶</em></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<iframe name="contentFrame" id="g_iframe" class="g-iframe" scrolling="auto" frameborder="0" src="about:blank"
+        allowfullscreen="true"></iframe>
+<script type="text/javascript">
+    var GUserAcc = {topic: 1, reward: false};
+    (function () {
+        var topbar = document.getElementById('g-topbar'),
+            scrollBarWidth = document.body.clientWidth - topbar.clientWidth;
+        topbar.style.width = topbar.clientWidth + 'px';
+        topbar.className = 'g-topbar';
+        if (window.addEventListener) {
+            window.addEventListener('resize', onResize)
+        } else {
+            window.attachEvent('onresize', onResize)
+        }
+
+        function onResize() {
+            topbar.style.width = (document.body.clientWidth - scrollBarWidth) + 'px';
+        };
+    })();
+    /*!
+    * Copyright (c) 2009-2011 Andreas Blixt <andreas@blixt.org>
+    * Contributors: Aaron Ogle <aogle@avencia.com>,
+    * Matti Virkkunen <mvirkkunen@gmail.com>,
+    * Simon Chester <simonches@gmail.com>
+    * http://github.com/blixt/js-hash
+    * MIT License: http://www.opensource.org/licenses/mit-license.php
+    *
+    * Hash handler
+    * Keeps track of the history of changes to the hash part in the address bar.
+    */
+    /* WARNING for Internet Explorer 7 and below:
+    * If an element on the page has the same ID as the hash used, the history will
+    * get messed up.
+    *
+    * Does not support history in Safari 2 and below.
+    *
+    * Example:
+    * function handler(newHash, initial) {
+    * if (initial)
+    * alert('Hash is "' + newHash + '"');
+    * else
+    * alert('Hash changed to "' + newHash + '"');
+    * }
+    * Hash.init(handler);
+    * Hash.go('abc123');
+    *
+    *
+    * Updated by Simon Chester (simonches@gmail.com) on 2011-05-16:
+    * - Removed the need for blank.html and the iframe argument by creating the
+    * iframe on initialization.
+    *
+    * Updated by Matti Virkkunen (mvirkkunen@gmail.com) on 2009-11-16:
+    * - Added second argument to callback that indicates whether the callback is
+    * due to initial state (true) or due to an actual change to the hash
+    * (false).
+    *
+    * Updated by Aaron Ogle (aogle@avencia.com) on 2009-08-11:
+    * - Fixed bug where Firefox automatically unescapes location.hash but no
+    * other browsers do. Always get the hash by parsing location.href and
+    * never use location.hash.
+    */
+    var Hash = (function () {
+        var
+// Import globals
+            window = this,
+            documentMode = document.documentMode,
+            history = window.history,
+// Plugin variables
+            callback, hash,
+// IE-specific
+            iframe,
+            getHash = function () {
+// Internet Explorer 6 (and possibly other browsers) extracts the query
+// string out of the location.hash property into the location.search
+// property, so we can't rely on it. The location.search property can't be
+// relied on either, since if the URL contains a real query string, that's
+// what it will be set to. The only way to get the whole hash is to parse
+// it from the location.href property.
+//
+// Another thing to note is that in Internet Explorer 6 and 7 (and possibly
+// other browsers), subsequent hashes are removed from the location.href
+// (and location.hash) property if the location.search property is set.
+//
+// Via Aaron: Firefox 3.5 (and below?) always unescape location.hash which
+// causes poll to fire the hashchange event twice on escaped hashes. This
+// is because the hash variable (escaped) will not match location.hash
+// (unescaped.) The only consistent option is to rely completely on
+// location.href.
+                var index = window.location.href.indexOf('#');
+                return (index == -1 ? '' : window.location.href.substr(index + 1));
+            },
+// Used by all browsers except Internet Explorer 7 and below.
+            poll = function () {
+                var curHash = getHash();
+                if (curHash != hash) {
+                    hash = curHash;
+                    callback(curHash, false);
+                }
+            },
+// From:
+// http://perfectionkills.com/detecting-event-support-without-browser-sniffing/
+            isHashChangeSupported = function () {
+                var eventName = 'onhashchange';
+                var isSupported = (eventName in document.body);
+                if (!isSupported) {
+                    document.body.setAttribute(eventName, 'return;');
+                    isSupported = typeof document.body[eventName] == 'function';
+                }
+// documentMode logic from YUI to filter out IE8 Compat Mode (which
+// generates false positives).
+                return isSupported && (document.documentMode === undefined ||
+                    document.documentMode > 7);
+            },
+            createIframe = function () {
+                var tempEl = document.createElement();
+                tempEl.innerHTML = '<iframe src="javascript:void(0)" tabindex="-1" ' +
+                    'style="display: none;"></iframe>';
+                var frame = tempEl.childNodes[0];
+                document.body.appendChild(frame);
+                return frame;
+            },
+// Used to create a history entry with a value in the iframe.
+            setIframe = function (newHash) {
+                try {
+                    var doc = iframe.contentWindow.document;
+                    doc.open();
+                    doc.write('<html><body>' + newHash + '</body></html>');
+                    doc.close();
+                    hash = newHash;
+                } catch (e) {
+                    setTimeout(function () {
+                        setIframe(newHash);
+                    }, 10);
+                }
+            },
+// Used by Internet Explorer 7 and below to set up an iframe that keeps track
+// of history changes.
+            setUpIframe = function () {
+// Don't run until access to the body is allowed.
+                try {
+                    iframe = createIframe();
+                } catch (e) {
+                    setTimeout(setUpIframe, 10);
+                    return;
+                }
+// Create a history entry for the initial state.
+                setIframe(hash);
+                var data = hash;
+                setInterval(function () {
+                    var curData, curHash;
+                    try {
+                        curData = iframe.contentWindow.document.body.innerText;
+                        if (curData != data) {
+                            data = curData;
+                            window.location.hash = hash = curData;
+                            callback(curData, true);
+                        } else {
+                            curHash = getHash();
+                            if (curHash != hash) setIframe(curHash);
+                        }
+                    } catch (e) {
+                    }
+                }, 50);
+            };
+        return {
+            init: function (cb) {
+// init can only be called once.
+                if (callback) return;
+                callback = cb;
+// Keep track of the hash value.
+                hash = getHash();
+                cb(hash, true);
+                if (isHashChangeSupported()) {
+                    if (window.addEventListener) {
+                        window.addEventListener('hashchange', poll, false);
+                    } else if (window.attachEvent) {
+                        window.attachEvent('onhashchange', poll);
+                    }
+                } else {
+// Run specific code for Internet Explorer.
+                    if (window.ActiveXObject) {
+                        if (!documentMode || documentMode < 8) {
+// Internet Explorer 5.5/6/7 need an iframe for history
+// support.
+                            setUpIframe();
+                        }
+                    } else {
+// Change Opera navigation mode to improve history support.
+                        if (history.navigationMode) {
+                            history.navigationMode = 'compatible';
+                        }
+                        setInterval(poll, 50);
+                    }
+                }
+            },
+            go: function (newHash) {
+// Cancel if the new hash is the same as the current one, since there
+// is no cross-browser way to keep track of navigation to the exact
+// same hash multiple times in a row. A wrapper can handle this by
+// adding an incrementing counter to the end of the hash.
+                if (newHash == hash) return;
+                if (iframe) {
+                    setIframe(newHash);
+                } else {
+                    window.location.hash = hash = newHash;
+                    callback(newHash, false);
+                }
+            }
+        };
+    })();
+    var GDispatcher = (function () {
+        var _lastPage = '',
+            _igReg = /f=(.*?)/,
+            _hReg = /\/?#.*/,
+            _xssReg = /(java|vb)script/,//xssæ³¨å¥
+            _default = '/discover';
+
+        function _isIE10plus() {
+            var _ua = window.navigator.userAgent;
+            return (/msie\s+(.*?);/i.test(_ua) || /trident\/.+rv:([\d\.]+)/i.test(_ua)) && (parseInt(RegExp.$1) >= 10);
+        };
+
+        function _onHashChange(_hash) {
+            var _url,
+                _iframe = document.getElementById('g_iframe');
+            if (!_hash || _igReg.test(_hash) || _xssReg.test(_hash)) {//å¿½ç¥ç»è®¡æ¥æºçhash
+                _url = _default;
+            } else {
+                _hash = _hash.replace(/\/+/g, '/');//#29664 http://music.163.com/#// ä¼æ­»å¾ªç¯
+                var _midx = -1;
+                if ((_midx = _hash.indexOf('store/m/')) >= 0) {
+                    _url = _hash.substring(0, _midx + 8) + (_hash.substring(_midx + 8).replace('/m/', '/#/'));
+                } else {
+                    _url = _hash.replace('/m/', '/#/');
+                }
+            }
+            if (_url.indexOf('http://') < 0) {
+                _url = location.protocol + '//' + location.hostname + _url;
+            }
+//éå¯¹ie10+ location.replaceçbugåç¹æ®å¤ç
+            if (_isIE10plus()) {
+                if (_lastPage.replace(_hReg, '') == _url.replace(_hReg, '')) {//åªæ¯hashçæ¹å
+                    _iframe.contentWindow.location.replace(_url);
+                } else {
+                    _iframe.parentNode.removeChild(_iframe);
+                    _iframe = document.createElement('iframe');
+                    _iframe.id = 'g_iframe';
+                    _iframe.src = 'about:blank';
+                    _iframe.className = 'g-iframe';
+                    _iframe.setAttribute('allowfullscreen', true);
+                    document.body.insertAdjacentElement('afterBegin', _iframe);
+                    _iframe.contentWindow.location.href = _url;
+                }
+            } else {
+                _iframe.contentWindow.location.replace(_url);
+            }
+            _lastPage = _url;
+            if (typeof window.onHashChange == 'function') {
+                window.onHashChange(_hash);
+            }
+        };
+        Hash.init(_onHashChange);
+        return {
+            dispatch: function (_url, _replace) {
+                var _ph = GUtil.getPathAndHash(_url);
+                if (!_ph) return;
+                if (_replace) {
+                    location.replace(GUtil.getBase() + '#' + _ph);
+                } else {
+                    location.hash = _ph;
+                }
+            },
+            refreshIFrame: function (_url) {
+                _onHashChange(_url);
+            }
+        };
+    })();</script>
+<div class="g-btmbar">
+    <div class="m-playbar m-playbar-unlock" style="top: -53px; visibility: visible;" id="auto-id-nHDgK48MCVqotwJT">
+        <div class="updn">
+            <div class="left f-fl"><a href="javascript:;" class="btn" hidefocus="true" data-action="lock"></a></div>
+            <div class="right f-fl"></div>
+        </div>
+        <div class="bg"></div>
+        <div class="hand" title="å±å¼æ­æ¾æ¡"></div>
+        <div class="wrap" id="g_player" style="margin-left: -500.5px;">
+            <div class="btns">
+                <a href="javascript:;" hidefocus="true" data-action="prev" class="prv" title="ä¸ä¸é¦(ctrl+â)">ä¸ä¸é¦</a>
+                <a href="javascript:;" hidefocus="true" data-action="play" class="ply j-flag" title="æ­æ¾/æå(p)">æ­æ¾/æå</a>
+                <a href="javascript:;" hidefocus="true" data-action="next" class="nxt" title="ä¸ä¸é¦(ctrl+â)">ä¸ä¸é¦</a>
+            </div>
+            <div class="head j-flag"><img src="http://s4.music.126.net/style/web2/img/default/default_album.jpg"><a
+                    href="javascript:;" hidefocus="true" class="mask"></a></div>
+            <div class="play">
+                <div class="j-flag words"></div>
+                <div class="m-pbar" data-action="noop">
+                    <div class="barbg j-flag" id="auto-id-mBzKkApbL4r9FqBu">
+                        <div class="rdy" style="width:0%;"></div>
+                        <div class="cur" style="width: 0%;"><span class="btn f-tdn f-alpha"
+                                                                  id="auto-id-T2DkhEWhU1hUKRUR"><i></i></span></div>
+                    </div>
+                    <span class="j-flag time"><em>00:00</em> / 00:00</span>
+                </div>
+            </div>
+            <div class="oper f-fl">
+                <a href="javascript:;" hidefocus="true" data-action="like" class="icn icn-add j-flag" title="æ¶è">æ¶è</a>
+                <a href="javascript:;" hidefocus="true" data-action="share" class="icn icn-share"
+                   title="åäº«">åäº«</a>
+            </div>
+            <div class="ctrl f-fl f-pr j-flag">
+                <div class="m-vol" style="visibility:hidden;" id="auto-id-ylVG1zskPem2uead">
+                    <div class="barbg"></div>
+                    <div class="vbg j-t" id="auto-id-7fpw0DpTKFhwStzG">
+                        <div class="curr j-t" style="height: 74.4px;"></div>
+                        <span class="btn f-alpha j-t" style="top: 16.199999999999996px;"></span></div>
+                </div>
+                <a href="javascript:;" hidefocus="true" data-action="volume" class="icn icn-vol"></a>
+                <a href="javascript:;" hidefocus="true" data-action="mode" class="icn icn-loop" title="å¾ªç¯"></a>
+                <span class="add f-pr">
+<span class="tip" style="display:none;">å·²æ·»å å°æ­æ¾åè¡¨</span>
+<a href="javascript:;" title="æ­æ¾åè¡¨" hidefocus="true" data-action="panel" class="icn icn-list s-fc3">0</a>
+</span>
+                <div class="tip tip-1" style="display:none;">å¾ªç¯</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//s3.music.126.net/web/s/core.js?580ad3ed5c31e46d347870830d9e3088" type="text/javascript"></script>
+<iframe frameborder="0" id="auto-id-AFBOeMsS9potb1Hh" style="display: none;" src="about:blank"></iframe>
+<script src="//s3.music.126.net/web/s/pt_frame_index.js?d01ee35168ef0c3d5a5777cfe77d7a7c"
+        type="text/javascript"></script>
+<script type="text/javascript" src="https://acstatic-dun.126.net/tool.min.js"></script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38766552-1'], ['_setLocalGifPath', '/UA-38766552-1/__utm.gif'], ['_setLocalRemoteServerMode']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = '//wr.da.netease.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();//fix ipadä¸çä¸ä¸ªbug
+    if (navigator.userAgent.indexOf('iPad') != -1) {
+        iframeHeight = Math.max(
+            Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+            Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+            Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+        );
+        top.document.body.style.height = iframeHeight + 20 + 'px';
+    }</script>
+</body>
+</html>
