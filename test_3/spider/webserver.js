@@ -2,11 +2,13 @@
 var port, server, service, system = require('system');
 var fs = require('fs');
 var root = fs.absolute("./data");
+fs.makeDirectory(root)
 fs.changeWorkingDirectory(root);
+
 console.log('workingDirectory' + root);
 
-
 var page = require('webpage').create();
+
 if (system.args.length !== 2) {
     console.log('Usage:serverkeeplive.js<portnumber>');
     phantom.exit(1);
@@ -65,7 +67,7 @@ page.onError = function (message) {
                 playLists.push(jsonData.playLists[i]);
             }
         } else if (jsonData.dataType === 'playListDetail') {
-            var playListDetailFile = "./data/" + jsonData.id + ".json";
+            var playListDetailFile = "./" + jsonData.id + ".json";
             if (!fs.exists(playListDetailFile)) {
                 fs.write(playListDetailFile, data, 'w');
             }

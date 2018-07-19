@@ -1,8 +1,10 @@
-"user strict"
+"use strict";
 var port,server,service,system = require('system');
 var fs = require('fs');
 var root = fs.absolute("./data");
+fs.makeDirectory(root);
 fs.changeWorkingDirectory(root);
+
 console.log('workingDirectory'+root);
 
 
@@ -18,7 +20,7 @@ if(system.args.length !==2){
         var requestUrl = request.post.url;
         response.headers = {
             'Cache':'no-cache',
-            'Content-type':'text/html;charser=utf-8'
+            'Content-Type':'text/html;charset=utf-8'
         };
         if (requestUrl){
             page.open(requestUrl,function (status) {
@@ -28,7 +30,7 @@ if(system.args.length !==2){
                 }
                 var body = page.content;
                 //写入文件
-                fs.write('/demo.html',body,'w');
+                fs.write('./demo.html',body,'w');
                 response.write(body);
                 response.close();
             });
